@@ -1,22 +1,20 @@
 return {
   {
-    "catppuccin/nvim",
-    name = "catppuccin",
+    "folke/tokyonight.nvim",
+    name = "tokyonight",
     lazy = false,
     priority = 1000,
     opts = {
-      flavour = "frappe",
-      transparent_background = true,
-      integrations = {
-        neotree = true,
-        treesitter = true,
-        telescope = true,
-        cmp = true,
+      style = "night", -- 可選值："storm", "moon", "night", "day"
+      transparent = true,
+      styles = {
+        sidebars = "transparent",
+        floats = "transparent",
       },
     },
     config = function(_, opts)
-      require("catppuccin").setup(opts)
-      vim.cmd.colorscheme("catppuccin-frappe")
+      require("tokyonight").setup(opts)
+      vim.cmd.colorscheme("tokyonight-night")
     end,
   },
 }
