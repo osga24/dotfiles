@@ -20,6 +20,7 @@ keymap("n", "<S-Right>", "<C-w>>", opts)
 
 -- 🔧 分割視窗與清除高亮
 keymap("n", "<leader>sv", ":vsplit<CR>", opts)
+keymap("n", "<leader>sp", ":split<CR>", opts)
 keymap("n", "<leader>n", ":noh<CR>", opts)
 
 -- 🧹 快速關閉 buffer
