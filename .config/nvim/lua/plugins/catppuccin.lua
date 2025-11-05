@@ -20,7 +20,6 @@ return {
       require("catppuccin").setup(opts)
       vim.cmd.colorscheme("catppuccin-frappe")
 
-      -- 確保所有 UI 載入後強制透明
       vim.api.nvim_create_autocmd("UIEnter", {
         once = true,
         callback = function()

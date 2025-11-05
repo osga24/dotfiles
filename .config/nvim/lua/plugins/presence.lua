@@ -4,7 +4,7 @@ return {
     require("presence").setup({
       neovim_image_text = "keep dev...",
       main_image = "file",
-      log_level = "debug",
+      log_level = "error",
       enable_line_number = true,
       editing_text = "editing %s",
       file_explorer_text = "browsing %s",

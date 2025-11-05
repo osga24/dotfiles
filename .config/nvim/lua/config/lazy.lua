@@ -16,33 +16,40 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   spec = {
-    -- add LazyVim and import its plugins
+    -- 核心：LazyVim 與其內建插件
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-    -- import any extras modules here
+
+    { import = "lazyvim.plugins.extras.coding.nvim-cmp" },
+    { import = "lazyvim.plugins.extras.editor.telescope" },
+
+    -- 語言與 UI extras
     { import = "lazyvim.plugins.extras.lang.typescript" },
     { import = "lazyvim.plugins.extras.lang.json" },
-    -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
     { import = "lazyvim.plugins.extras.ui.dashboard-nvim" },
-    -- import/override with your plugins
+    -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
+
+    -- 自訂插件（放在 ~/.config/nvim/lua/plugins/）
     { import = "plugins" },
   },
+
+  -- 建自訂插件預設不延遲載入（易於除錯）
   defaults = {
-    -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
-    -- If you know what you're doing, you can set this to `true` to have all your custom plugins lazy-loaded by default.
     lazy = false,
-    -- It's recommended to leave version=false for now, since a lot the plugin that support versioning,
-    -- have outdated releases, which may break your Neovim install.
-    version = false, -- always use the latest git commit
-    -- version = "*", -- try installing the latest stable version for plugins that support semver
+    version = false,
   },
+
+  -- 預設色系候選
   install = { colorscheme = { "catppuccin-frappe", "tokyonight", "habamax" } },
+
+  -- 自動檢查更新（靜默通知）
   checker = {
-    enabled = true, -- check for plugin updates periodically
-    notify = false, -- notify on update
-  }, -- automatically check for plugin updates
+    enabled = true,
+    notify = false,
+  },
+
+  -- 精簡 runtimepath（保持你原本的精簡列表）
   performance = {
     rtp = {
-      -- disable some rtp plugins
       disabled_plugins = {
         "gzip",
         -- "matchit",
