@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+PROFILE="$1"
+
+case "$PROFILE" in
+h)
+	SRC="$HOME/.config/aerospace/aerospace-house.toml"
+	;;
+n)
+	SRC="$HOME/.config/aerospace/aerospace-normal.toml"
+	;;
+*)
+	echo "Unknown profile: $PROFILE"
+	echo "Usage: aero-profile {n / h}"
+	exit 1
+	;;
+esac
+
+cp "$SRC" "$HOME/.config/aerospace/aerospace.toml"
+aerospace reload-config

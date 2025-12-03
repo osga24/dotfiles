@@ -99,11 +99,10 @@ shift-alt-8 = 'move-node-to-workspace 8'
 shift-alt-9 = 'move-node-to-workspace 9'
 
 [workspace-to-monitor-force-assignment]
-2 = 1                   
-4 = 1
-6 = 1                   
-8 = 1                   
-9 = 3
+2 = 'secondary'
+4 = 'secondary'
+6 = 'secondary'
+8 = 'secondary'
 
 # Service mode
 [mode.service.binding]
