@@ -1,0 +1,187 @@
+# 啟動時自動運行
+after-startup-command = []
+
+# 啟動時是否在所有顯示器創建 workspace
+start-at-login = true
+
+# 標準化行為
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+# 默認容器方向
+default-root-container-layout = 'tiles'
+
+# 默認容器方向 ('horizontal' 或 'vertical')
+default-root-container-orientation = 'auto'
+
+# 滑鼠跟隨焦點
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+on-focus-changed = ['move-mouse window-lazy-center']
+
+# 快捷鍵設定
+[mode.main.binding]
+# -- mode 模式 --
+alt-shift-semicolon = 'mode service' 
+
+# -- 切換窗口焦點 --
+alt-h = 'focus left'
+alt-j = 'focus down'
+alt-k = 'focus up'
+alt-l = 'focus right'
+
+# -- 切換顯示器焦點 --
+# 左右顯示器
+alt-s = 'focus-monitor left'
+alt-f = 'focus-monitor right'
+# 上下顯示器
+alt-i = 'focus-monitor up'
+alt-u = 'focus-monitor down'
+
+# -- 修改佈局 --
+# 旋轉佈局 
+shift-alt-r = 'layout tiles horizontal vertical'
+
+# 切換浮動窗口
+shift-alt-e = 'layout floating tiling'
+
+# -- 修改窗口大小 --
+# 最大化窗口 
+shift-alt-m = 'fullscreen'
+
+# 平衡窗口大小
+shift-alt-b = 'balance-sizes'
+
+# 切換 space 佈局
+shift-alt-c = 'layout tiles accordion'
+
+
+# -- 移動窗口 --
+# 交換窗口
+shift-alt-h = 'move left'
+shift-alt-j = 'move down'
+shift-alt-k = 'move up'
+shift-alt-l = 'move right'
+
+# -- 移動窗口到其他顯示器 --
+# 左右顯示器
+shift-alt-s = ['move-node-to-monitor left', 'focus-monitor left']
+shift-alt-f = ['move-node-to-monitor right', 'focus-monitor right']
+# 上下顯示器
+shift-alt-i = ['move-node-to-monitor up', 'focus-monitor up']
+shift-alt-u = ['move-node-to-monitor down', 'focus-monitor down']
+
+# -- 調整窗口大小 (AeroSpace 預設) --
+alt-shift-minus = 'resize smart -50'
+alt-shift-equal = 'resize smart +50'
+
+# -- Workspace 導航 (只保留數字 1-9) --
+alt-1 = 'workspace 1'
+alt-2 = 'workspace 2'
+alt-3 = 'workspace 3'
+alt-4 = 'workspace 4'
+alt-5 = 'workspace 5'
+alt-6 = 'workspace 6'
+alt-7 = 'workspace 7'
+alt-8 = 'workspace 8'
+alt-9 = 'workspace 9'
+
+# -- 移動窗口到 Workspace (只保留數字 1-9) --
+shift-alt-1 = 'move-node-to-workspace 1'
+shift-alt-2 = 'move-node-to-workspace 2'
+shift-alt-3 = 'move-node-to-workspace 3'
+shift-alt-4 = 'move-node-to-workspace 4'
+shift-alt-5 = 'move-node-to-workspace 5'
+shift-alt-6 = 'move-node-to-workspace 6'
+shift-alt-7 = 'move-node-to-workspace 7'
+shift-alt-8 = 'move-node-to-workspace 8'
+shift-alt-9 = 'move-node-to-workspace 9'
+
+[workspace-to-monitor-force-assignment]
+2 = 1                   
+4 = 1
+6 = 1                   
+8 = 1                   
+9 = 3
+
+# Service mode
+[mode.service.binding]
+esc = ['reload-config', 'mode main']
+r = ['flatten-workspace-tree', 'mode main']
+f = ['layout floating tiling', 'mode main']
+backspace = ['close-all-windows-but-current', 'mode main']
+# -- Aerospace 特定設定 --
+[gaps]
+inner.horizontal = 10
+inner.vertical =   10
+outer.left =       10
+outer.bottom =     10
+outer.top =        10
+outer.right =      10
+
+
+# 預設開啟 floating 
+# finder
+[[on-window-detected]]
+if.app-id = 'com.apple.finder'
+run = 'layout floating'
+
+# setting
+[[on-window-detected]]
+if.app-id = 'com.apple.systempreferences'
+run = 'layout floating'
+
+# claude
+[[on-window-detected]]
+if.app-id = 'com.anthropic.claudefordesktop'
+run = 'layout floating'
+
+#chatGPT
+[[on-window-detected]]
+if.app-id = 'com.openai.chat'
+run = 'layout floating'
+
+#youtube music
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome.app.cinhimbnkkaeohfgghhklpknlkffjgod'
+run = ['layout floating', 'move-node-to-workspace 9']
+
+#bitwarden
+[[on-window-detected]]
+if.app-id = 'com.bitwarden.desktop'
+run = 'layout floating'
+
+#Outlook
+[[on-window-detected]]
+if.app-id = 'com.microsoft.Outlook'
+run = 'layout floating'
+
+#ColorSlurp
+[[on-window-detected]]
+if.app-id = 'com.IdeaPunch.ColorSlurp'
+run = 'layout floating'
+
+# 預設開啟不同 workspace
+# Arc
+[[on-window-detected]]
+if.app-id = 'company.thebrowser.Browser'
+run = ['layout tiling', 'move-node-to-workspace 1']
+
+#discord
+[[on-window-detected]]
+if.app-id = 'com.hnc.Discord'
+run = ['layout tiling', 'move-node-to-workspace 2']
+
+# telegram
+[[on-window-detected]]
+if.app-id = 'com.tdesktop.Telegram'
+run = ['layout tiling', 'move-node-to-workspace 2']
+
+# Ghostty
+[[on-window-detected]]
+if.app-id = 'com.mitchellh.ghostty'
+run = ['layout tiling', 'move-node-to-workspace 3']
+
+# Figgma
+[[on-window-detected]]
+if.app-id = 'com.figma.Desktop'
+run = 'move-node-to-workspace 4'
