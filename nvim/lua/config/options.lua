@@ -21,3 +21,5 @@ vim.cmd([[hi Normal guibg=NONE ctermbg=NONE]])
 vim.cmd([[hi NormalNC guibg=NONE ctermbg=NONE]])
 vim.cmd([[hi NormalFloat guibg=NONE ctermbg=NONE]])
 vim.cmd([[hi FloatBorder guibg=NONE ctermbg=NONE]])
+
+vim.g.lazyvim_python_lsp = "pyright"
