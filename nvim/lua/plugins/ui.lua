@@ -2,8 +2,7 @@ return {
   {
     "folke/tokyonight.nvim",
     name = "tokyonight",
-    lazy = false,
-    priority = 1000,
+    lazy = true,
     opts = {
       style = "night", -- 可選值："storm", "moon", "night", "day"
       transparent = true,
@@ -12,9 +11,5 @@ return {
         floats = "transparent",
       },
     },
-    config = function(_, opts)
-      require("tokyonight").setup(opts)
-      vim.cmd.colorscheme("tokyonight-night")
-    end,
   },
 }

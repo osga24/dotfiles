@@ -1,7 +1,4 @@
 return {
-  { import = "lazyvim.plugins" },
-
-  { import = "plugins.presence" },
-  { import = "plugins.toggleterm" },
-  { import = "plugins.markdown-preview" },
+  -- This module is auto-imported by lazy.nvim; individual files in lua/plugins/
+  -- are discovered automatically, so no nested imports are needed here.
 }

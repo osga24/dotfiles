@@ -4,10 +4,7 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
-        -- 新增語言加這邊
-        tsserver = {},
         jsonls = {},
-        pyright = {},
         lua_ls = {
           settings = { Lua = { diagnostics = { globals = { "vim" } } } },
         },
@@ -30,8 +27,6 @@ return {
     opts = {
       ensure_installed = {
         -- LSP
-        -- 新增語言也要加這邊
-        "typescript-language-server",
         "json-lsp",
         "pyright",
         "lua-language-server",
