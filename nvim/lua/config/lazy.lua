@@ -39,7 +39,7 @@ require("lazy").setup({
   },
 
   -- 預設色系候選
-  install = { colorscheme = { "catppuccin-frappe", "tokyonight", "habamax" } },
+  install = { colorscheme = { "kanagawa", "catppuccin-frappe", "tokyonight", "habamax" } },
 
   -- 自動檢查更新（靜默通知）
   checker = {
